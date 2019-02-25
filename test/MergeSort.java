@@ -7,62 +7,62 @@ import java.util.Iterator;
 public class MergeSort extends HelperMethods {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		ArrayList array = new ArrayList();
 
-		array.add(8);
-		array.add(7);
-		array.add(6);
-		array.add(5);
-		array.add(4);
-		array.add(3);
-		array.add(2);
-		array.add(1);
-		array.add(8);
-	
-		ArrayList<ArrayList> arrayList = new ArrayList();
-		arrayList.add(array);
-		arrayList.add(merge(array));
+		test();
+	}
 
-		ArrayList merger = arrayList.get(1);
-		ArrayList i = new ArrayList();
+	public static void test() {
+		int[] array = { 1, 2, 3, 4, 5, 6, 7, 8  };
+		int [][] array2= new int[8][8];
 
-		for (Object a : merger) {
-			ArrayList al = merge((ArrayList<ArrayList>) a);
-			for (Object o : al) {				
-				i.add(o);
-			}
-		}
-		arrayList.add(i);
-		
-		for(Object o:arrayList) {
-			System.out.println(o);
+		int timesHalved = 0;
+		while (halve(array)[0].length >= 2) {
+			int h = halve(array)[0].length;
+			array = halve(array)[0];
+			timesHalved++;
+			
+//			int h[][] = new int[array.length][array.length/2];
+//			
+//			for (int i = 0; i < array.length; i++) {
+//				int [][] ha = halve(array);
+//				
+//				for(int hai=0;hai<ha.length;hai++) {
+//					int[][] t = halve(ha[hai]);
+//					for(int ti = 0; ti<t.length;ti++) {
+//						
+//					}
+//				}
+//				
+//				int index = 0;
+//				for (int hi = 0; hi < array.length/2; hi++) {
+//					h[i][hi] =ha[i][index];
+//					 ++index;
+//				}
+	//
+//			}
 		}
 
 	}
 
-	public static ArrayList<ArrayList> merge(ArrayList<ArrayList> array) {
-		ArrayList<ArrayList> arraylist = new ArrayList();
-		// first array
-		ArrayList firstArray = new ArrayList();
-		arraylist.add(firstArray);
+	public static int[][] halve(int[] array) {
 
-		// second array
-		ArrayList secondArray = new ArrayList();
-		arraylist.add(secondArray);
+		int length = array.length;
+		int index = 0;
+		int[][] result = new int[2][length / 2];
 
-		// iterate through array and add elements to array list
-		for (int i = 0; i < array.size(); i++) {
-			if (i < array.size() / 2) {
-				// first half of array
-				firstArray.add(array.get(i));
+		for (int i = 0; i < length; i++) {
+			// System.out.println(array[i]);
+			if (i < length / 2) {
+				// System.out.println("1:" + array[i]);
+				result[0][i] = array[i];
 			} else {
-				// second half of array
-				secondArray.add(array.get(i));
+				// System.out.println("2:" + array[i]);
+				result[1][index] = array[i];
+				index++;
 			}
 		}
 
-		return arraylist;
+		return result;
 	}
 
 }
