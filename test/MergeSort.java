@@ -7,8 +7,13 @@ import java.util.Iterator;
 public class MergeSort extends HelperMethods {
 
 	public static void main(String[] args) {
-		mergeSort(new int [] {10,5,4,3});
 
+		int[] array = { 4, 3, 2, 1 };
+		int[] sortedArray = mergeSort(array);
+		System.out.print("array: ");
+		printArray(array);
+		System.out.print("sorted array: ");
+		printArray(sortedArray);
 	}
 
 	public static int[] mergeSort(int[] array) {
@@ -38,7 +43,11 @@ public class MergeSort extends HelperMethods {
 		first = mergeSort(first);
 		second = mergeSort(second);
 
-		return merge(first, second);
+		if (array.length <= 2) {
+			return array;
+		} else {
+			return merge(first, second);
+		}
 	}
 
 	public static int[] merge(int[] first, int[] second) {
