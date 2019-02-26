@@ -8,19 +8,26 @@ public class MergeSort extends HelperMethods {
 
 	public static void main(String[] args) {
 
-		test();
+	}
+
+	public static int[] mergeSort(int[] array) {
+		return null;
+	}
+
+	public static int[] merge(int[] first, int[] second) {
+		return null;
 	}
 
 	public static void test() {
-		int[] array = { 1, 2, 3, 4, 5, 6, 7, 8  };
-		int [][] array2= new int[8][8];
+		int[] array = { 1, 2, 3, 4, 5, 6, 7, 8 };
+		int[][] array2 = new int[8][8];
 
 		int timesHalved = 0;
 		while (halve(array)[0].length >= 2) {
 			int h = halve(array)[0].length;
 			array = halve(array)[0];
 			timesHalved++;
-			
+
 //			int h[][] = new int[array.length][array.length/2];
 //			
 //			for (int i = 0; i < array.length; i++) {
@@ -38,7 +45,7 @@ public class MergeSort extends HelperMethods {
 //					h[i][hi] =ha[i][index];
 //					 ++index;
 //				}
-	//
+			//
 //			}
 		}
 
