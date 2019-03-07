@@ -5,7 +5,8 @@ import java.util.Stack;
 public class Implementations {
 
 	public static void main(String args[]) {
-		stackTest();
+		//stackTest();
+		
 	}
 
 	static void stackTest() {
